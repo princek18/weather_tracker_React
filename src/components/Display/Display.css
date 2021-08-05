@@ -1,0 +1,50 @@
+.dis{
+    border: 1px solid black;
+    border-radius: 8px;
+    text-align: center;
+    margin: auto;
+    margin-top: 40px;
+    height: 210px;
+    width: 800px;
+    display: flex;
+}
+.first{
+    text-align: left;
+    margin: auto;
+    margin-top: 0px;
+}
+.second{
+    text-align: left;
+    margin: auto;
+
+}
+.third{
+    text-align: left;
+    margin: auto;
+
+}
+
+@media screen and (max-width: 800px) {
+    body{
+        text-align: center;
+    }
+    .dis{
+        border-radius: 10px;
+        height: 600px;
+        width: 200px;
+        border: none;
+        text-align: center;
+        margin: auto;
+        margin-top: 40px;
+        display:inline-block
+    }
+    .first{
+        text-align: center;
+    }
+    .second{
+        text-align: center;
+    }
+    .third{
+        text-align: center;
+    }
+  }

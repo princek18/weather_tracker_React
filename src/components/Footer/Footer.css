@@ -1,0 +1,18 @@
+footer{
+    border: 1px solid black;
+    height: 40px;
+    font-size: 15px;
+    padding-top: 5px;
+    text-align: center;
+    background-color: black;
+    margin-top: 31vh;
+    color: white;
+    /* position: fixed; */
+    width: 100%;
+}
+@media screen and (max-width: 800px) {
+    footer{
+        margin-top: 5vh;
+    }
+    
+}
