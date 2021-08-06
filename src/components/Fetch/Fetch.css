@@ -14,3 +14,11 @@ form{
     display: flex;
     flex-direction: column;
 } */
+.alignTop{
+    margin-top: 10px;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}

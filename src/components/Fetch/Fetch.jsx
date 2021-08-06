@@ -1,76 +1,67 @@
 import React from 'react'
 import { useState } from 'react'
 import './Fetch.css'
-import { Form, Input, Button, Row, Col} from 'antd';
+import { Form, Input, Button, Row, Col } from 'antd';
 
 
-export default function Fetch({api}) {
+export default function Fetch({ api }) {
   const [form] = Form.useForm();
-  const[city, setCity] = useState("")
+  const [city, setCity] = useState("")
 
-  
-  const handlesubmit = ({cityname})=>{
-    // e.preventDefault();
-    console.log(cityname);
-    api(cityname)
-    // setCity("");
-    form.resetFields();
+
+  const handlesubmit = (elem) => {
+    let cityName = elem.target.value;
+    console.log(cityName)
+    elem.preventDefault();
+    console.log(cityName);
+    if (cityName.length > 3) {
+      api(cityName)
+      // setCity("");
+      // form.resetFields();
+    }
   }
 
 
-  const put = (e)=>{
+  const put = (e) => {
     setCity(e.target.value)
   }
-    return (
-        // <div>
-        //   <form action="" onSubmit={handlesubmit}>
-        //   <input placeholder="Enter City" type="text" value={city} onChange={put} required />
-        //   <button className="btn btn-sm btn-primary" >Search</button>
-        //   </form>
-        // </div>
-        <Row gutter={24}>
-        <Form form={form}
-        name="basic"
+  return (
 
-        initialValues={{
-          remember: true,
-        }}
-        onFinish={handlesubmit}
-        // onFinishFailed={onFinishFailed}
-      ><Col span={8}>
-        <Form.Item
-          label="Search for city"
-          name="cityname"
-          rules={[
-            {
-              required: true,
-              message: 'Please type a city!',
-            },
-          ]}
-        >
-          <Input/>
-        </Form.Item>
-        </Col>
-  
-        <Col sm={24} md={16} lg={8}>
-        <Form.Item
-          name="remember"
-          valuePropName="checked"
+<div className="alignTop">
+    <Form form={form}  
+      name="basic"
 
-        >
-        </Form.Item>
-        </Col>
+      initialValues={{
+        remember: true,
+      }}
+      onChange={handlesubmit}
+    >
+      <Row gutter={24} >
+        <Col sm={24} md={24} lg={24}>
+          <Form.Item
           
-        <Col xs={24} md={16} xl={8}>
-        <Form.Item
-
-        >
-          <Button type="primary" htmlType="submit">
-            Submit
-          </Button>
-        </Form.Item>
+            name="cityname"
+            rules={[
+              {
+                required: true,
+                message: 'Please type a city!',
+              },
+            ]}
+          >
+            <Input placeholder="Enter City Name.." allowClear={true} />
+          </Form.Item>
         </Col>
-      </Form>
+
+        <Col sm={24} md={16} lg={8}>
+          <Form.Item
+            name="remember"
+            valuePropName="checked"
+
+          >
+          </Form.Item>
+        </Col>
       </Row>
-    )
+    </Form>
+    </div>
+  )
 }

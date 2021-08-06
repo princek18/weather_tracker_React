@@ -1,18 +1,20 @@
 footer{
     border: 1px solid black;
-    height: 40px;
+    height: 10rem;
     font-size: 15px;
-    padding-top: 5px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
     text-align: center;
     background-color: black;
-    margin-top: 31vh;
     color: white;
-    /* position: fixed; */
+    position: fixed;
+    bottom: 0;
     width: 100%;
 }
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
     footer{
         margin-top: 5vh;
     }
     
-}
+} */
