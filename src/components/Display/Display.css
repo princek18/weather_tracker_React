@@ -12,21 +12,6 @@
     border-radius: 1rem;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-.first{
-    text-align: left;
-    margin: auto;
-    margin-top: 0px;
-}
-.second{
-    text-align: left;
-    margin: auto;
-
-}
-.third{
-    text-align: left;
-    margin: auto;
-
-}
 
 @media screen and (max-width: 800px) {
     body{
@@ -34,21 +19,13 @@
     }
     .dis{
         border-radius: 10px;
-        height: 600px;
+        height: 450px;
         width: 200px;
         border: none;
         text-align: center;
         margin: auto;
         margin-top: 40px;
+        margin-bottom: 30px;
         display:inline-block
-    }
-    .first{
-        text-align: center;
-    }
-    .second{
-        text-align: center;
-    }
-    .third{
-        text-align: center;
     }
   }

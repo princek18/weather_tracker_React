@@ -1,27 +1,20 @@
+import { Col, Row } from 'antd'
 import React from 'react'
 import './Display.css'
-export default function Display({ data}) {
+export default function Display({ icon, data }) {
     return (
-    <div className="dis">
-        <div className="first">
-            <img src={data.icon} alt="" />
-            <p>City: {data.name}</p>
-            <p>State: {data.state}</p>
-            <p>Country: {data.country}</p>
-        </div>
-        <div className="second">
-            <p>Time Zone: {data.zone}</p>
-            <p>Local Time: {data.time}</p>
-            <p>Temperature: {data.temp}&#8451;</p>
-            <p>Condition: {data.condition}</p>
-        </div>
-        <div className="third">
-            <p>Wind Speed: {data.speed} kmph</p>
-            <p>Wind Direction: {data.direction}</p>
-            <p>Humidity: {data.humidity}%</p>
-            <p>Feels Like: {data.feels_like}&#8451;</p>
-        </div>
-    </div>
+        <>
+            <Row justify="center">
+                <img src={icon.icon} alt="" />
+            </Row>
+            <div className="dis">
+                <Row align="middle" justify="center">
+                    {Object.keys(data).map((one) => {
+                        return <Col sm={8} xs={16} lg={8} md={16}>{one}: {data[one]}</Col>
+                    })}
+                </Row>
 
+            </div>
+        </>
     )
 }

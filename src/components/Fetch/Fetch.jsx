@@ -1,12 +1,10 @@
 import React from 'react'
-import { useState } from 'react'
 import './Fetch.css'
-import { Form, Input, Button, Row, Col } from 'antd';
+import { Form, Input, Row, Col } from 'antd';
 
 
 export default function Fetch({ api }) {
   const [form] = Form.useForm();
-  const [city, setCity] = useState("")
 
 
   const handlesubmit = (elem) => {
@@ -16,15 +14,10 @@ export default function Fetch({ api }) {
     console.log(cityName);
     if (cityName.length > 3) {
       api(cityName)
-      // setCity("");
-      // form.resetFields();
     }
   }
 
 
-  const put = (e) => {
-    setCity(e.target.value)
-  }
   return (
 
 <div className="alignTop">
@@ -36,10 +29,9 @@ export default function Fetch({ api }) {
       }}
       onChange={handlesubmit}
     >
-      <Row gutter={24} >
+      <Row>
         <Col sm={24} md={24} lg={24}>
           <Form.Item
-          
             name="cityname"
             rules={[
               {
@@ -56,7 +48,6 @@ export default function Fetch({ api }) {
           <Form.Item
             name="remember"
             valuePropName="checked"
-
           >
           </Form.Item>
         </Col>

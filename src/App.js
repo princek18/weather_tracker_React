@@ -6,14 +6,14 @@ import Fetch from './components/Fetch/Fetch';
 import Display from './components/Display/Display';
 import Error from './components/Error';
 import axios from 'axios';
-import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+import 'antd/dist/antd.css';
 
 
 function App() {
   const Handle = ({e})=>{
       if(e === true)
       {
-        return <Display data={data}/>;
+        return <Display data={data} icon={icon}/>;
       }
       else{
         return <Error/>;
@@ -21,6 +21,7 @@ function App() {
   }
 
   const [data, setData] = useState([]);
+  const [icon, setIcon] = useState();
   const [e, setE] = useState("");
 
   const api = (city) => {
@@ -32,33 +33,27 @@ function App() {
       let {temp_c, condition, wind_kph, wind_dir, humidity, feelslike_c} = current;
       let {text, icon} = condition;
       let k = {
-        name: name,
+        city: name,
         state: region,
         country: country,
         zone: tz_id,
         time: localtime,
-        temp: temp_c,
+        "temp(°C)": temp_c,
         condition: text,
-        icon: icon,
-        speed: wind_kph,
+        "speed(kph)": wind_kph,
         direction: wind_dir,
-        humidity: humidity,
-        feels_like: feelslike_c
+        "humidity(%)": humidity,
+        "feels_like(°C)": feelslike_c
       };
+      let l = {icon: icon};
       setData(k);
+      setIcon(l);
       setE(true);
     }, (error) =>{
       setE(false);
       console.log(error);
     });
-    // fetch("http://api.weatherapi.com/v1/current.json?key=f8dafc0bda574e0bb4d154724201308&q=" + city)
-    //   .then(res => res.json())
-    //   .then(
-    //     (result) => {
-    //       try{
-    //         // let {name, region, country, tz_id, localtime, temp_c, condition, current} = result
 
-    //       }
         }
   return (
     <div className="App">
