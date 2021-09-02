@@ -7,7 +7,7 @@ export default function Fetch({ api }) {
   const [form] = Form.useForm();
 
 
-  const handlesubmit = (elem) => {
+  const handleSubmit = (elem) => {
     let cityName = elem.target.value;
     console.log(cityName)
     elem.preventDefault();
@@ -27,7 +27,7 @@ export default function Fetch({ api }) {
       initialValues={{
         remember: true,
       }}
-      onChange={handlesubmit}
+      onChange={handleSubmit}
     >
       <Row>
         <Col sm={24} md={24} lg={24}>

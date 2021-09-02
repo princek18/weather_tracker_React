@@ -25,7 +25,7 @@ function App() {
   const [e, setE] = useState("");
 
   const api = (city) => {
-    axios.get("http://api.weatherapi.com/v1/current.json?key=f8dafc0bda574e0bb4d154724201308&q=" + city)
+    axios.get("https://api.weatherapi.com/v1/current.json?key=f8dafc0bda574e0bb4d154724201308&q=" + city)
     .then((response) =>{
       let result = response.data;
       let {location, current} = result;
